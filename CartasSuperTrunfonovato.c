@@ -72,17 +72,18 @@ int main (){
     printf("Código carta 01: %s\n", codigo);
     printf("Cidade carta 01: %s\n", cidade);
     printf("Habitantes carta 01: %d\n", populacao);
-    printf("Área carta 01: %f km²\n", area);
-    printf("PIB carta 01: %f\n", pib);
+    printf("Área carta 01: %.1f km²\n", area);
+    printf("PIB carta 01: %.1f\n", pib);
     printf("Pontos turísticos carta 01: %d\n", turistico);
+
     //leitura carta 02
     printf("Resultado carta 02:\n");
     printf("Estado carta 02: %s\n", estado2);
     printf("Código carta 02: %s\n", codigo2);
     printf("Cidade carta 02: %s\n", cidade2);
     printf("Habitantes carta 02: %d\n", populacao2);
-    printf("Área carta 02: %f km²\n", area2);
-    printf("PIB carta 02: %f\n", pib2);
+    printf("Área carta 02: %.1f km²\n", area2);
+    printf("PIB carta 02: %.1f\n", pib2);
     printf("Pontos turísticos carta 02: %d\n", turistico2);
 
 return.0;
