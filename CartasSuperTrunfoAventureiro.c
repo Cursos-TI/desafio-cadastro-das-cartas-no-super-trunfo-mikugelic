@@ -2,14 +2,16 @@
 
 int main() {
     char estado[50], codigo[50], cidade[50];
-    int populacao;
+    unsigned long int populacao;
     float area, pib, densidade, percapita;
     int turistico;
+    float superpoder;
 
     char estado2[50], codigo2[50], cidade2[50];
-    int populacao2;
+    unsigned long int populacao2;
     float area2, pib2, densidade2, percapita2;
     int turistico2;
+    float superpoder2;
 
     // Cadastro carta 01
     printf("Cadastro da carta 01:\n");
@@ -24,7 +26,7 @@ int main() {
     scanf("%s", cidade);
 
     printf("Digite o número de habitantes: \n");
-    scanf("%d", &populacao);
+    scanf("%lu", &populacao);
 
     printf("Digite a área em km²: \n");
     scanf("%f", &area);
@@ -36,7 +38,8 @@ int main() {
     scanf("%d", &turistico);
 
     densidade = populacao / area;
-    percapita = pib / populacao;
+    percapita = (pib * 1000000000.0) / populacao;
+    superpoder = populacao + area + (pib * 1000000000.0) + percapita + turistico + (1.0 / densidade);
 
     // Cadastro carta 02
     printf("Cadastro da carta 02:\n");
@@ -51,7 +54,7 @@ int main() {
     scanf("%s", cidade2);
 
     printf("Digite o número de habitantes: \n");
-    scanf("%d", &populacao2);
+    scanf("%lu", &populacao2);
 
     printf("Digite a área em km²: \n");
     scanf("%f", &area2);
@@ -63,7 +66,8 @@ int main() {
     scanf("%d", &turistico2);
 
     densidade2 = populacao2 / area2;
-    percapita2 = pib2 / populacao2;
+    percapita2 = (pib2 * 1000000000.0) / populacao2;
+    superpoder2 = populacao2 + area2 + (pib2 * 1000000000.0) + percapita2 + turistico2 + (1.0 / densidade2);
 
     // Resultado carta 01
     printf("Resultado carta 01:\n");
@@ -89,5 +93,16 @@ int main() {
     printf("A Densidade Populacional da carta 02 é: %.2f hab/km²\n", densidade2);
     printf("O PIB per Capita da carta 02 é: %.2f reais\n", percapita2);
 
+    //comparação
+    printf("\n--- COMPARAÇÕES (1 = Carta 1 venceu, 0 = Carta 2 venceu) ---\n");
+
+    printf("População: %d\n", populacao > populacao2);
+    printf("Área: %d\n", area > area2);
+    printf("PIB: %d\n", pib > pib2);
+    printf("Pontos Turísticos: %d\n", turistico > turistico2);
+    printf("PIB per capita: %d\n", percapita > percapita2);
+    printf("Densidade populacional (menor vence): %d\n", densidade < densidade2);
+    printf("Super Poder: %d\n", superpoder > superpoder2);
+    
     return 0;
 }
